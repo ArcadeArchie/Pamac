@@ -8,6 +8,8 @@ using System;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
+using Avalonia.Controls.Templates;
+
 namespace Pamac.UI;
 
 internal class Program
@@ -20,6 +22,8 @@ internal class Program
         hostBuilder.ConfigureServices(services =>
         {
             services.AddSingleton<IHostedLifetime, DesktopHostedLifetime>();
+
+            services.AddTransient<IDataTemplate, ViewLocator>();
         });
         hostBuilder.ConfigureAvaloniaAppBuilder<App>(
             () => BuildAvaloniaApp().SetupWithClassicDesktopLifetime(args),
