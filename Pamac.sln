@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pamac.Core", "src\Pamac.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pamac.UI", "src\Pamac.UI\Pamac.UI.csproj", "{A5F92051-3ADF-4F47-AE2C-DDE2696A73BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pamac.Core.UnitTests", "tests\Pamac.Core.UnitTests\Pamac.Core.UnitTests.csproj", "{896FD106-106C-4680-B526-60D205434B68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A5F92051-3ADF-4F47-AE2C-DDE2696A73BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5F92051-3ADF-4F47-AE2C-DDE2696A73BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5F92051-3ADF-4F47-AE2C-DDE2696A73BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{896FD106-106C-4680-B526-60D205434B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{896FD106-106C-4680-B526-60D205434B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{896FD106-106C-4680-B526-60D205434B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{896FD106-106C-4680-B526-60D205434B68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
