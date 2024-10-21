@@ -2,28 +2,28 @@ namespace Pamac.Core.Config;
 
 public struct SignatureVerificationLevel
 {
-    public VerificationLevel VerificationLevel { get; init; } = VerificationLevel.Optional;
-    public TrustLevel TrustLevel { get; init; } = TrustLevel.TrustedOnly;
+    private ALPM_SIGLEVEL _level;
+    private int mask;
 
-    public SignatureVerificationLevel(VerificationLevel verificationLevel, TrustLevel trustLevel)
+    public SignatureVerificationLevel(int level)
     {
-        VerificationLevel = verificationLevel;
-        TrustLevel = trustLevel;
+        _level = (ALPM_SIGLEVEL)level;
+    }
+
+    public static implicit operator int(SignatureVerificationLevel lvl) => (int)lvl._level;
+
+    internal void SetLevel(ALPM_SIGLEVEL level)
+    {
+        _level |= level;
+        mask |= (int)level;
+    }
+    internal void UnsetLevel(ALPM_SIGLEVEL level)
+    {
+        _level &= ~level;
+        mask |= (int)level;
     }
 }
 
-public enum VerificationLevel
-{
-    Never,
-    Required,
-    Optional
-}
-
-public enum TrustLevel
-{
-    TrustedOnly,
-    TrustAll
-}
 //https://gitlab.archlinux.org/pacman/pacman/-/blob/master/src/pacman/conf.c?ref_type=heads#L491
 internal enum ALPM_SIGLEVEL
 {
