@@ -24,7 +24,7 @@ public static class HostExtensions
 
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
-    public async static Task<int> RunAvaloniaAppAsync(this IHost host, CancellationToken token = default)
+    public static async Task<int> RunAvaloniaAppAsync(this IHost host, CancellationToken token = default)
     {
         IHostedLifetime lifetime = host.Services.GetRequiredService<IHostedLifetime>();
         Avalonia.Application application = host.Services.GetRequiredService<Application>();
