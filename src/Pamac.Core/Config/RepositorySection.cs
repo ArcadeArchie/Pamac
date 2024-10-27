@@ -9,7 +9,7 @@ public record RepositorySection(
     string IncludePath,
     [StringSyntax(
         StringSyntaxAttribute.Uri)]string CacheServerUrl,
-    SignatureVerificationLevel SignatureVerificationLevel,
+    string SignatureVerificationLevel,
     RepositoryUsage Usage);
 
 public enum RepositoryUsage
