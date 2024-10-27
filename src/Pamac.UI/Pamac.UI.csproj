@@ -24,4 +24,14 @@
   <ItemGroup>
     <Folder Include="PackageList\ViewModels\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pamac.Core\Pamac.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="pacman.test.conf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
