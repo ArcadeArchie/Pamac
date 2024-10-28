@@ -2,7 +2,7 @@
 
 namespace Pamac.Core.Config;
 
-public class PacmanConfigurationProvider : FileConfigurationProvider
+internal class PacmanConfigurationProvider : FileConfigurationProvider
 {
     public PacmanConfigurationProvider(FileConfigurationSource source) : base(source)
     {

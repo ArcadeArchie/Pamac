@@ -2,7 +2,7 @@
 
 namespace Pamac.Core.Config;
 
-public class PacmanConfigurationSource : FileConfigurationSource
+internal class PacmanConfigurationSource : FileConfigurationSource
 {
     public override IConfigurationProvider Build(IConfigurationBuilder builder)
     {
