@@ -21,23 +21,24 @@ internal sealed class PacmanConfigParser
             if (line.StartsWith('[')) // section start
             {
                 isOptionSection = line[1..^1] == "options";
-                if(!isOptionSection) prefix = line[1..^1]+"_";
+                if (!isOptionSection) prefix = line[1..^1] + ":";
                 continue;
             }
+
             var parts = line.Split('=').Select(v => v.Trim()).ToArray();
             switch (parts.Length)
             {
                 case 1 when isOptionSection:
-                    _data.TryAdd(parts[0], null);
+                    _data.TryAdd("PacmanConf:Options:" + parts[0], null);
                     break;
                 case 1 when !isOptionSection:
-                    _data.TryAdd(prefix + parts[0], null);
+                    _data.TryAdd("PacmanConf:Repositories:" + prefix + parts[0], null);
                     break;
                 case 2 when isOptionSection:
-                    _data.TryAdd(parts[0], parts[1]);
+                    _data.TryAdd("PacmanConf:Options:" + parts[0], parts[1]);
                     break;
                 case 2 when !isOptionSection:
-                    _data.TryAdd(prefix + parts[0], parts[1]);
+                    _data.TryAdd("PacmanConf:Repositories:" + prefix + parts[0], parts[1]);
                     break;
             }
         }

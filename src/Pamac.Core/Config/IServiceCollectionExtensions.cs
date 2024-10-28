@@ -19,6 +19,10 @@ public static class ServiceCollectionExtensions
                 s.ResolveFileProvider();
             });
         });
+        builder.ConfigureServices((_, services) =>
+        {
+            services.AddOptions<PacmanConfig>("PacmanConf");
+        });
         return builder;
     }
 }
