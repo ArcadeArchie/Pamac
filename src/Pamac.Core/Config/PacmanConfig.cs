@@ -2,6 +2,8 @@ namespace Pamac.Core.Config;
 /// <summary>
 /// 
 /// </summary>
-public record PacmanConfig(
-    OptionsSection Options,
-    RepositorySection[] Repositories);
+public record PacmanConfig()
+{
+    public OptionsSection Options { get; init; }
+    public RepositorySection[] Repositories { get; init; }
+}
